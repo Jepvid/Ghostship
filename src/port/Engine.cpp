@@ -333,7 +333,7 @@ static void SetupScriptLoader(std::shared_ptr<Ship::Context> context) {
 #endif
 
     const std::vector<std::string> libraryPaths = { tccBase + "/lib" };
-    context->InitScriptLoader(defines, codeVersion, "-g -rdynamic", includePaths, libraryPaths, {});
+    context->InitScriptLoader(defines, codeVersion, "-g -rdynamic -nostdlib", includePaths, libraryPaths, {});
 #endif
 
     context->GetScriptLoader()->SetCacheDir(Ship::Context::GetPathRelativeToAppDirectory("mods_cache"));
