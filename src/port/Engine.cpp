@@ -306,7 +306,7 @@ static void SetupScriptLoader(std::shared_ptr<Ship::Context> context) {
         tccBase + "/include/sys", tccBase + "/include/sec_api",
     };
     const std::vector<std::string> libraryPaths = { tccBase + "/lib" };
-    context->InitScriptLoader(defines, codeVersion, "-g -rdynamic", includePaths, libraryPaths, { "Ghostship" });
+    context->InitScriptLoader(defines, codeVersion, "-g -rdynamic --nostartfiles", includePaths, libraryPaths, { "Ghostship" });
 #else
     std::string tccBase = Ship::Context::GetPathRelativeToAppDirectory(".tcc");
     if (!std::filesystem::exists(tccBase)) {
